@@ -1,6 +1,6 @@
 # Patches for Qt5 must be at the very least submitted to Qt's Gerrit codereview
 # rather than their bug-report Jira. The latter is rarely reviewed by Qt.
-class QtAT57 < Formula
+class QtAT58 < Formula
   desc "Cross-platform application and UI framework"
   homepage "https://www.qt.io/"
   url "https://download.qt.io/official_releases/qt/5.8/5.8.0/single/qt-everywhere-opensource-src-5.8.0.tar.xz"
