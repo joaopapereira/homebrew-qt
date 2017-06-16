@@ -116,9 +116,9 @@ class QtAT58 < Formula
 
     # configure saved PKG_CONFIG_LIBDIR set up by superenv; remove it
     # see: https://github.com/Homebrew/homebrew/issues/27184
-    inreplace prefix/"mkspecs/qconfig.pri",
-              /\n# pkgconfig\n(PKG_CONFIG_(SYSROOT_DIR|LIBDIR) = .*\n){2}\n/,
-              "\n"
+    # inreplace prefix/"mkspecs/qconfig.pri",
+    #           /\n# pkgconfig\n(PKG_CONFIG_(SYSROOT_DIR|LIBDIR) = .*\n){2}\n/,
+    #           "\n"
 
     # Move `*.app` bundles into `libexec` to expose them to `brew linkapps` and
     # because we don't like having them in `bin`. Also add a `-qt5` suffix to
