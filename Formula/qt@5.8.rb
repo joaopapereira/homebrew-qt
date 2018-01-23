@@ -29,10 +29,10 @@ class QtAT58 < Formula
   depends_on :macos => :mountain_lion
 
   depends_on "dbus" => :optional
-  depends_on :mysql => :optional
+  depends_on "mysql" => :optional
   depends_on "pkg-config" => :build
-  depends_on :postgresql => :optional
-  depends_on :xcode => :build
+  depends_on "postgresql" => :optional
+  depends_on "xcode" => :build
 
   # http://lists.qt-project.org/pipermail/development/2016-March/025358.html
   resource "qt-webkit" do
@@ -93,6 +93,7 @@ class QtAT58 < Formula
       (buildpath/"qtwebkit").install resource("qt-webkit")
       inreplace ".gitmodules", /.*status = obsolete\n((\s*)project = WebKit\.pro)/, "\\1\n\\2initrepo = true"
     end
+    args << "-D__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES=1"
 
     system "./configure", *args
     system "make"
