@@ -93,7 +93,6 @@ class QtAT58 < Formula
       (buildpath/"qtwebkit").install resource("qt-webkit")
       inreplace ".gitmodules", /.*status = obsolete\n((\s*)project = WebKit\.pro)/, "\\1\n\\2initrepo = true"
     end
-    args << "-D__ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES=1"
 
     system "./configure", *args
     system "make"
